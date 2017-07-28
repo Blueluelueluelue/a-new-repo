@@ -1,0 +1,165 @@
+F:\Programs>cd Projects
+
+F:\Programs\Projects>git init
+Reinitialized existing Git repository in F:/Programs/Projects/.git/
+
+F:\Programs\Projects>git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   taha2.txt
+
+
+F:\Programs\Projects>git commit -m "This is my first commit too"
+[master (root-commit) a6d548b] This is my first commit too
+ 1 file changed, 1 insertion(+)
+ create mode 100644 taha2.txt
+
+F:\Programs\Projects>notepad taha2.txt
+
+F:\Programs\Projects>git branch
+* master
+
+F:\Programs\Projects>git checkout -b A_NEW_BRANCH
+Switched to a new branch 'A_NEW_BRANCH'
+
+F:\Programs\Projects>git branch
+* A_NEW_BRANCH
+  master
+
+F:\Programs\Projects>git checkout master
+Switched to branch 'master'
+
+F:\Programs\Projects>git branch
+  A_NEW_BRANCH
+* master
+
+F:\Programs\Projects>git remote add origin https://github.com/Blueluelueluelue/a
+-new-repo.git
+
+F:\Programs\Projects>git push -u origin master
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 245 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/Blueluelueluelue/a-new-repo.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+
+F:\Programs\Projects>git push origin A_NEW_BRANCH
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/Blueluelueluelue/a-new-repo.git
+ * [new branch]      A_NEW_BRANCH -> A_NEW_BRANCH
+
+F:\Programs\Projects>git checkout A-NEW-BRANCH
+error: pathspec 'A-NEW-BRANCH' did not match any file(s) known to git.
+
+F:\Programs\Projects>git branch
+  A_NEW_BRANCH
+* master
+
+F:\Programs\Projects>git branch A_NEW_BRANCH
+fatal: A branch named 'A_NEW_BRANCH' already exists.
+
+F:\Programs\Projects>git checkout A_NEW_BRANCH
+Switched to branch 'A_NEW_BRANCH'
+
+F:\Programs\Projects>git branch
+* A_NEW_BRANCH
+  master
+
+F:\Programs\Projects>git rm A_NEW_BRANCH
+fatal: pathspec 'A_NEW_BRANCH' did not match any files
+
+F:\Programs\Projects>notepad textfile2.txt
+
+F:\Programs\Projects>git commit
+On branch A_NEW_BRANCH
+Untracked files:
+        textfile2.txt
+
+nothing added to commit but untracked files present
+
+F:\Programs\Projects>git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+
+F:\Programs\Projects>git add textfile2.txt
+
+F:\Programs\Projects>git commit
+Vim: Caught deadly signal SEGV
+
+Press ENTER or type command to continueVim: Finished.
+
+      1 [main] vim 3900 cygwin_exception::open_stackdumpfile: Dumping stack trac
+e to vim.exe.stackdump
+Aborting commit due to empty commit message.
+
+F:\Programs\Projects>
+F:\Programs\Projects>git commit -m "This is another commit"
+[A_NEW_BRANCH f41ce93] This is another commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 textfile2.txt
+
+F:\Programs\Projects>dir
+ Volume in drive F is Local Disk
+ Volume Serial Number is 2AE4-F153
+
+ Directory of F:\Programs\Projects
+
+07/29/2017  04:52 AM    <DIR>          .
+07/29/2017  04:52 AM    <DIR>          ..
+07/29/2017  04:27 AM                22 taha2.txt
+07/29/2017  04:51 AM                44 textfile2.txt
+07/29/2017  04:52 AM               223 vim.exe.stackdump
+               3 File(s)            289 bytes
+               2 Dir(s)  102,192,799,744 bytes free
+
+F:\Programs\Projects>git push origin A_NEW_BRANCH
+Counting objects: 3, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 291 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/Blueluelueluelue/a-new-repo.git
+   a6d548b..f41ce93  A_NEW_BRANCH -> A_NEW_BRANCH
+
+F:\Programs\Projects>git push -u origin master
+Everything up-to-date
+Branch master set up to track remote branch master from origin.
+
+F:\Programs\Projects>git pull origin master
+remote: Counting objects: 1, done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), done.
+From https://github.com/Blueluelueluelue/a-new-repo
+ * branch            master     -> FETCH_HEAD
+   a6d548b..50db5ab  master     -> origin/master
+Updating f41ce93..50db5ab
+Fast-forward
+
+F:\Programs\Projects>git log
+commit 50db5ab84063f0994a4ee77a9526c0ffe2aa7648 (HEAD -> A_NEW_BRANCH, origin/ma
+ster)
+Merge: a6d548b f41ce93
+Author: Blueluelueluelue <tahaking786@gmail.com>
+Date:   Sat Jul 29 04:59:59 2017 +0530
+
+    Merge pull request #1 from Blueluelueluelue/A_NEW_BRANCH
+
+    This is another commit
+
+commit f41ce93bf169f2b7ec741ed6541d4d71dac260a6 (origin/A_NEW_BRANCH)
+Author: Blueluelueluelue <tahaking786@gmail.com>
+Date:   Sat Jul 29 04:52:38 2017 +0530
+
+    This is another commit
+
+commit a6d548ba44a1ab795c2cca04170480adf62693a8 (master)
+Author: Blueluelueluelue <tahaking786@gmail.com>
+Date:   Sat Jul 29 04:34:23 2017 +0530
+
+    This is my first commit too
